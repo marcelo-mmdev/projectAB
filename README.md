@@ -25,8 +25,8 @@ Todas Bibliotecas que foram usadas no projeto:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Shadcn](https://ui.shadcn.com/docs) - Componentes CSS.
 - [Lucide React](https://lucide.dev/) - Biblioteca de Icones.
-- [Recharts](https://recharts.org/en-US/guide/getting-started) - Biblioteca de Grafícos.
-
+- [Recharts](https://recharts.org/en-US/guide/getting-started) - Biblioteca de Grafícos. Para resolver os Warning dessa lib - npm i recharts@alpha.
+- [NextAuth.js](https://next-auth.js.org/) - Biblioteca de Authenticação.
 
 
 ## Deploy on Vercel

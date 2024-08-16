@@ -1,11 +1,21 @@
+'use client'
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { Activity, FileSliders, FolderSearch, Home, LayoutDashboard, LogOut, MapPinHouse, Package, PanelBottom, ShieldAlert } from 'lucide-react'
 // import { Tooltip, TooltipProvider, TooltipTrigger } from '@radix-ui/react-tooltip'
 import { TooltipContent, Tooltip, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
+import { useRouter } from 'next/navigation'
+import { signOut } from 'next-auth/react'
 
 export function Sidebar() {
+  const router = useRouter()
+  async function logout() {
+    await signOut({
+      redirect: false
+    })
+    router.replace('/')
+  }
   return(
     <>
       <div className='flex w-full flex-col bg-muted/40'>
@@ -104,6 +114,7 @@ export function Sidebar() {
                 <TooltipTrigger asChild>
                   <Link 
                     href="#"
+                    onClick={logout}
                     className='flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                   >
                     <LogOut className='h-5 w-5 text-red-800'/>

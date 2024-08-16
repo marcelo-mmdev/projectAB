@@ -1,0 +1,7 @@
+POST https://api-pdb.nemesys.cloud/api/v1/containers
+Content-Type: application/json
+
+{
+  "username": "marcelo.rodrigues",
+  "password": "tvasabranca123"
+}

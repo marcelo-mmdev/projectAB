@@ -1,11 +1,16 @@
+import { nextAuthOptions } from '@/app/api/auth/[...nextauth]/route';
 import { CardDashboard } from '@/components/card';
 import { ChartOverview } from '@/components/chart';
+import { Sidebar } from '@/components/sidebar';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { DollarSign } from 'lucide-react';
+import { getServerSession } from 'next-auth';
 
-export default function Dashboard() {
+export default async function Dashboard() {
+  const session = await getServerSession(nextAuthOptions)
   return (
     <>
+      <Sidebar />
       <main className='sm:ml-14 p-4'>
         <section className='grid grid-cols-2 gap-4 lg:grid-cols-4'>
           <Card>
