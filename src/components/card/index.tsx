@@ -1,8 +1,38 @@
+"use client"
 import { DollarSign } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
+// import { UsuarioService } from '@/services/services';
+import { useEffect, useState } from 'react';
+import ApiService from '@/services/services';
 
 export function CardDashboard() {
+  const [api, setApi] = useState([])
+  // const usuarioService = new UsuarioService
+
+  useEffect(() => {
+    ApiService.get("/containers"
+      // , {headers: {
+      // "message": "OK.",
+      // "code": 1,
+      // "data": []
+      // }}
+    ).then((res) => {
+      console.log("tetetet", res)
+      setApi(res.data)
+    }).catch((err) => console.log("5555555555",err))
+    // usuarioService.listarTodos().then((response) => {
+    //   console.log(response)
+    // }).catch((error) => {
+    //   console.log("QQQQQQQQQQQQQQ", error)
+    // })
+    // ApiService.get("/containers"
+    //   , {headers: {"x-api-key":"sess"}, method:"GET"}
+    // ).then((res) => {
+    //   console.log("tetetet", res)
+    //   setApi(res.data)
+    // }).catch((err) => console.log("5555555555",err))
+  }, [])
   return(
     <>
       <Card className='flex-1'>

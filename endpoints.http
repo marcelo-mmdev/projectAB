@@ -1,4 +1,4 @@
-POST https://api-pdb.nemesys.cloud/api/v1/containers
+POST https://api-pdb.nemesys.cloud/api/v1
 Content-Type: application/json
 
 {
